@@ -1,13 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 
-console.log('server.js file is running');
-
 const app = express();
- app.use(cors());
+app.use(cors());
  
+const path = require('path');
 app.get('/', (req, res) => {
-  res.send('Timestamp Microservice');
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 function handleDate(req, res) {
